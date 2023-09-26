@@ -13,7 +13,10 @@
 
  */
 function logicalAnd(a, b) {
-  // write your code here & return
+  if (a === true && b === true) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -23,7 +26,10 @@ function logicalAnd(a, b) {
  * @returns {boolean} - true if a or b is truthy, false if both are falsy
  */
 function logicalOr(a, b) {
-  // write your code here & return
+  if (a === true || b === true) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -32,7 +38,8 @@ function logicalOr(a, b) {
  * @returns {boolean} - the opposite of the given boolean
  */
 function invertBoolean(bool) {
-  // write your code here & return
+  const boolSwitch = !bool;
+  return boolSwitch;
 }
 
 /**
@@ -49,7 +56,13 @@ function invertBoolean(bool) {
 
  */
 function numberOfOdds(num) {
-  // write your code here & return
+  let amountOdds = 0;
+  for (let i = 0; i < num; i += 1) {
+    if (i % 2 !== 0) {
+      amountOdds += 1;
+    }
+  }
+  return amountOdds;
 }
 
 /**
@@ -62,7 +75,11 @@ function numberOfOdds(num) {
  * ? For example, num is 4 then return 10 because 1 + 2 + 3 + 4 = 10.
  */
 function addUpTheNumbers(num) {
-  // write your code here & return
+  let sum = 0;
+  for (let i = 0; i <= num; i += 1) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -81,7 +98,19 @@ function addUpTheNumbers(num) {
  * ?
  */
 function gradeGenerator(score) {
-  // write your code here & return
+  let letterGrade = '';
+  if (score < 60) {
+    letterGrade = 'F';
+  } else if (score < 70) {
+    letterGrade = 'D';
+  } else if (score < 80) {
+    letterGrade = 'C';
+  } else if (score < 90) {
+    letterGrade = 'B';
+  } else {
+    letterGrade = 'A';
+  }
+  return letterGrade;
 }
 
 /**
@@ -101,7 +130,11 @@ function gradeGenerator(score) {
  * ? it's 'an A' (not a A) and 'an F' (not a F)
  */
 function getGrade(name, score) {
-  // write your code here & return
+  const letterGrade = gradeGenerator(score);
+  if (letterGrade === 'A' || letterGrade === 'F') {
+    return `${name} got an ${letterGrade}`;
+  }
+  return `${name} got a ${letterGrade}`;
 }
 
 module.exports = {
